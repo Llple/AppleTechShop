@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import 'normalize.css';
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 300px;
+  margin-left: 300px;
+  &-logo{
+    height: 65px;
+    width: 300px;
+  }
+  &-number{
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  &-ref{
+    display: flex;
+    align-items: center;
+    gap:5px;
+  }
+  &-title{
+    color: rgb(217, 159, 243);
+    text-align: center;
+    font-size: 18px;
+  }
+  &-input{
+    box-shadow: -1px 4px 7px 4px rgba(34, 60, 80, 0.2);
+    border: 0px  ;
+    border-radius: 20px;
+    font-size: 12px;
+    height: 30px ;
+    width: 200px ;
+    &:focus {
+      outline: none;
+    }
+  }
+  
+}
+
+.App{
+  background-color: rgba(0, 0, 0, 0.637);
+}
+
+.categories{
+  display: flex;
+  list-style-type: none;
+  gap: 30px;
+  font-size: 20px;
+  font-weight: 200;
+  &-item{
+    cursor: pointer;
+    background-color: hsl(60, 56%, 91%);
+    border-radius: 10px;
+    padding: 6px;
+    &:hover{
+      background-color:hsla(0, 4%, 85%, 0.699);
+    }
+  }
+}
+.active{
+  background-color: rgb(216, 87, 87);
+}
+
+
