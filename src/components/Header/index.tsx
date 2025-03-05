@@ -2,7 +2,7 @@ import React from "react";
 
 const Header = () => {
   return (
-    <div className="header">
+    <div className="header container">
       <img src="logo_1.webp" className="header-logo"/>
       <div>
         <h1 className="header-number">+7 (987) 654-32-10</h1>

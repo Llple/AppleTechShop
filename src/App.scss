@@ -1,13 +1,18 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
 @import 'normalize.css';
+*{
+  padding: 0;
+  margin: 0;
+}
+.container{
+  margin-right: 300px;
+  margin-left: 300px;
+}
 .header{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-right: 300px;
-  margin-left: 300px;
+  
   &-logo{
     height: 65px;
     width: 300px;
@@ -43,6 +48,7 @@
 
 .App{
   background-color: rgba(0, 0, 0, 0.637);
+  padding-bottom: 0px;
 }
 
 .categories{
@@ -51,6 +57,7 @@
   gap: 30px;
   font-size: 20px;
   font-weight: 200;
+  padding-bottom: 20px;
   &-item{
     cursor: pointer;
     background-color: hsl(60, 56%, 91%);
@@ -58,11 +65,81 @@
     padding: 6px;
     &:hover{
       background-color:hsla(0, 4%, 85%, 0.699);
+      scale: 1.05;
     }
   }
 }
 .active{
   background-color: rgb(216, 87, 87);
+  scale: 1.2;
+  &:disabled{
+    background-color: #f0f0f0;
+    color: #ccc;
+    border: 1px solid #ddd;
+  }
+  &:hover{
+    background-color: rgb(216, 87, 87);
+    scale: 1.2;
+    
+  }
 }
+.CardItemsBlock{
+  
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
+}
+
+.cardItem{
+  box-shadow: 0px 0px 29px -7px rgba(229, 230, 231, 0.82);
+  position: relative;
+  border: none;
+  background-color: #fff;
+  border-radius: 10px;
+  height: 300px;
+  width: 250px;
+  align-items: center;
+  overflow: hidden;
+  cursor: pointer;
+  
+  
+  &:hover{
+    .cardItem-image{
+      transform: scale(1.4);
+    }
+    .cardItem-title{
+      color: aqua;
+    }
+
+  }
+    &-image{
+      border-radius: 10px;
+      height: auto;
+      transition: transform 1s ease;
+      width: 250px;
+      
+
+    }
+  
+    
+    &-title{
+    position: absolute; /* Фиксирует текст на месте */
+    bottom: 0; /* Привязка к нижней части контейнера */
+    width: 100%; /* Растягивает текст на всю ширину блока */
+    text-align: center;
+    height: 65px;
+    background-color: #a5a5a55b; /* Полупрозрачный фон */
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    margin: 0; 
+    }
+    
+  }
+  
+  
+
 
 
