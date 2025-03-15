@@ -1,5 +1,6 @@
 import React from 'react'
-import { Products } from '../../App'
+import { Products } from '../../redux/slices/itemsSlice'
+
 
 const CardItem: React.FC<Products> = ({ id,
   imageUrl,
