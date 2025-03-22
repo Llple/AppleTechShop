@@ -2,10 +2,17 @@ import { createAsyncThunk,createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 import axios from "axios"
 
-const fetchTech = createAsyncThunk(
+type propsState = {
+  category:number
+}
+
+export const fetchTech = createAsyncThunk<Products[],propsState>(
   'users/fetchTech',
-  async () => {
-    const {data}   = await axios.get<Products[]>("https://679223c9cf994cc68048dbd6.mockapi.io/AppleTech")
+  async (props) => {
+    const {category} = props
+    console.log("ЗАШЕЛ В БД СО СМЕНОЦ  КАТЕГОРИ ")
+    
+    const {data}   = (category > 0 )?await axios.get<Products[]>(`https://679223c9cf994cc68048dbd6.mockapi.io/AppleTech?category=${category}`):await axios.get<Products[]>(`https://679223c9cf994cc68048dbd6.mockapi.io/AppleTech`)
     return data
     
   },
@@ -22,7 +29,7 @@ export interface Products {
     description: string
 }
 export interface ProductState {
-  loading: "sucsess" | "loading" | "rejected",
+  loading: "success" | "loading" | "rejected",
   products: Products[],
   error:string
 }
@@ -49,7 +56,12 @@ export const itemsSlice = createSlice({
       })
       .addCase(fetchTech.fulfilled, (state, action: PayloadAction<Products[]>) => {
         state.products = action.payload; // Заменяем массив продуктов
-        state.loading = "sucsess" 
+        state.loading = "success" 
+      })
+      .addCase(fetchTech.rejected, (state,action) => {
+        state.products = []
+        state.loading = "rejected" 
+        state.error = action.error.message || "Ошибка загрузки";
       })
       
     

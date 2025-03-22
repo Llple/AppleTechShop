@@ -1,5 +1,6 @@
 import React from 'react'
 import { Products } from '../../redux/slices/itemsSlice'
+import { Link } from 'react-router-dom'
 
 
 const CardItem: React.FC<Products> = ({ id,
@@ -12,12 +13,14 @@ const CardItem: React.FC<Products> = ({ id,
     rating,
     description} ) =>  {
   return (
-    <div className='cardItem'>
-        
-        <img className='cardItem-image' src={imageUrl} alt="" />
-        
-        <h1 className='cardItem-title'>{title}</h1>
-    </div>
+    <Link to={`/product/${id}`}>
+      <div className='cardItem'>
+          
+          <img className='cardItem-image' src={imageUrl} alt="" />
+          
+          <h1 className='cardItem-title'>{title}</h1>
+      </div>
+    </Link>
   )
 }
 

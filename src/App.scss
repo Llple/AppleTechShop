@@ -139,8 +139,84 @@
     }
     
   }
+  .content{
+    height: 100dvh;
+
+}
+  .flex{
+    display: flex;
+  }
+  .pInfo{
+    &-title{
+      margin-left: 400px;
+    }
+    &-box{
+      display: flex;
+      
+      justify-content: space-around;
+      
+    }
+    &pr-tlt{
+      display: flex;
+    }
+    &-area-to-cart{
+      display: flex;
+    }
+    &-area-btn{
+      gap: 10px;
+      
+    }
+    &-btn{
+      aspect-ratio: 1;
+      
+      height: 20px;
+    }
+    &-count-input{
+      width: 30px;
+    }
+
+  }
+
+  .block-product{
+    display: flex;
+    background-color: #ccc;
+    padding: 20px;
+    border-radius: 20px;
+    gap: 10px;
+    &:hover{
+      background-color: #929292;
+      cursor: pointer;
+    }
+  }
+  .relative{
+    
+    position: relative;
+  }
+  .search-results {
+    position: absolute;
+    top: 110%; /* Размещаем список прямо под полем ввода */
+    left: 0;
+    background: rgba(255, 255, 255, 0.808);
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    z-index: 1000; /* Поднимаем поверх всех элементов */
+    max-height: 200px; /* Ограничение высоты */
+    overflow-y: auto;
+    
+  }
+ .wrapper-found-item{
+  padding-top: 20px;
+  &:first-child{
+    padding-top: 5px;
+  }
+  &:last-child{
+    padding-bottom: 5px;
+  }
+ }
+ .searching-product-price{
+  color: green;
+    
+ }
+
   
   
-
-
-
