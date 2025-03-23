@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/AppleTechShop/static/css/main.606a3178.css",
+    "main.js": "/AppleTechShop/static/js/main.8ed748f2.js",
+    "index.html": "/AppleTechShop/index.html",
+    "main.606a3178.css.map": "/AppleTechShop/static/css/main.606a3178.css.map",
+    "main.8ed748f2.js.map": "/AppleTechShop/static/js/main.8ed748f2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.606a3178.css",
+    "static/js/main.8ed748f2.js"
+  ]
+}
