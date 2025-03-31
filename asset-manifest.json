@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/AppleTechShop/static/css/main.606a3178.css",
-    "main.js": "/AppleTechShop/static/js/main.8ed748f2.js",
+    "main.css": "/AppleTechShop/static/css/main.b5041266.css",
+    "main.js": "/AppleTechShop/static/js/main.3cc075bb.js",
     "index.html": "/AppleTechShop/index.html",
-    "main.606a3178.css.map": "/AppleTechShop/static/css/main.606a3178.css.map",
-    "main.8ed748f2.js.map": "/AppleTechShop/static/js/main.8ed748f2.js.map"
+    "main.b5041266.css.map": "/AppleTechShop/static/css/main.b5041266.css.map",
+    "main.3cc075bb.js.map": "/AppleTechShop/static/js/main.3cc075bb.js.map"
   },
   "entrypoints": [
-    "static/css/main.606a3178.css",
-    "static/js/main.8ed748f2.js"
+    "static/css/main.b5041266.css",
+    "static/js/main.3cc075bb.js"
   ]
 }
