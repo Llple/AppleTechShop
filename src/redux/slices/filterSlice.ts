@@ -1,34 +1,35 @@
-import { createSlice } from '@reduxjs/toolkit'
-import type { PayloadAction } from '@reduxjs/toolkit'
-
+import { createSlice } from "@reduxjs/toolkit";
+import type { PayloadAction } from "@reduxjs/toolkit";
 
 interface FilterState {
-  category: number,
-  inputValue:string
+  category: number;
+  inputValue: string;
+  sortBy: number;
   //sortBy:number
 }
 
 const initialState: FilterState = {
-    category: 0,
-    inputValue:""
-}
+  category: 0,
+  inputValue: "",
+  sortBy: 0,
+};
 
 export const filterSlice = createSlice({
-  name: 'filter',
+  name: "filter",
   initialState,
   reducers: {
-    setCategory: (state,action:PayloadAction<number>) => {
-      state.category = action.payload
+    setCategory: (state, action: PayloadAction<number>) => {
+      state.category = action.payload;
     },
-    setInputValue: (state,action:PayloadAction<string>) => {
-      state.inputValue = action.payload
+    setInputValue: (state, action: PayloadAction<string>) => {
+      state.inputValue = action.payload;
     },
-    
+    setSortBy: (state, action: PayloadAction<number>) => {
+      state.sortBy = action.payload;
+    },
   },
-})
+});
 
-export const {setCategory ,setInputValue } = filterSlice.actions
+export const {setCategory, setInputValue, setSortBy} = filterSlice.actions;
 
-
-
-export default filterSlice.reducer
+export default filterSlice.reducer;

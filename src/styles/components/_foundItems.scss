@@ -1,0 +1,29 @@
+.found-items{
+    display: flex;
+    width: 270px;
+    margin-right: 10px;
+    background-color: #ccccccda;
+    padding: 20px;
+    border-radius: 20px;
+    gap: 10px;
+    align-items: center;
+    &__price{
+      color: green;
+      justify-items: end;
+      text-align: center;
+      font-weight: 900;
+        
+     }
+    
+    &__title{
+
+      font-weight: 700;
+    }
+    &__image{
+      height: 60px;
+    }
+    &:hover{
+      background-color: #929292;
+      cursor: pointer;
+    }
+  }

@@ -1,0 +1,66 @@
+@keyframes activePopup {
+  0% { opacity: 0;
+    transform: translateY(-130px);
+    }
+  30% { opacity: 0;
+  }
+  40% { opacity: 0.1;
+  }
+  100% { opacity: 1;
+  transform: translateY(0); }
+}
+
+.sort {
+  position: relative;
+  
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  padding-left: 1%;
+  cursor: pointer;
+  width: 10%;
+  height: 60px;
+  @media (max-width: 1024px) {
+    
+    width: 110px;
+  
+}
+
+  &__label {
+    font-weight: 700;
+    font-size: 15px;
+    @media (max-width: 1024px) {
+    
+      font-size: 14px;
+    
+  }
+
+    &__select {
+      color: rgb(111, 0, 255);
+    }
+  }
+  &__popup {
+    display: flex;
+    flex-direction: column;
+    list-style: none; 
+    padding: 0; 
+    margin: 0;
+    position: relative;
+    background-color: #4e4646;
+    z-index: 100;
+    width: 120%;
+    left: 0;
+    top: 80%;
+    gap: 10px;
+    border-radius: 20px;
+    animation: activePopup 0.5s normal ;
+    &-item {
+      text-align: center;
+      font-weight: 700;
+      color: rgb(255, 0, 13);
+      cursor: pointer;
+      &:hover {
+        color: rgb(109, 1, 7);
+      }
+    }
+  }
+}

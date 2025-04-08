@@ -1,222 +1,40 @@
 
-@import 'normalize.css';
+@import './styles/main';
 *{
   padding: 0;
   margin: 0;
 }
-.container{
-  margin-right: 300px;
-  margin-left: 300px;
-}
-.header{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  
-  &-logo{
-    height: 65px;
-    width: 300px;
-  }
-  &-number{
-    font-weight: bold;
-    font-size: 20px;
-    cursor: pointer;
-  }
-  &-ref{
-    display: flex;
-    align-items: center;
-    gap:5px;
-  }
-  &-title{
-    color: rgb(217, 159, 243);
-    text-align: center;
-    font-size: 18px;
-  }
-  &-input{
-    box-shadow: -1px 4px 7px 4px rgba(34, 60, 80, 0.2);
-    border: 0px  ;
-    border-radius: 20px;
-    font-size: 12px;
-    height: 30px ;
-    width: 200px ;
-    &:focus {
-      outline: none;
-    }
-  }
-  
-}
-
 .App{
   background-color: rgba(0, 0, 0, 0.637);
   padding-bottom: 0px;
 }
-
-.categories{
-  display: flex;
-  list-style-type: none;
-  gap: 30px;
-  font-size: 20px;
-  font-weight: 200;
-  padding-bottom: 20px;
-  &-item{
-    cursor: pointer;
-    background-color: hsl(60, 56%, 91%);
-    border-radius: 10px;
-    padding: 6px;
-    &:hover{
-      background-color:hsla(0, 4%, 85%, 0.699);
-      scale: 1.05;
-    }
-  }
+.container{
+  margin-right: 14dvw;
+  margin-left: 14dvw;
+  
+ 
 }
-.active{
-  background-color: rgb(216, 87, 87);
-  scale: 1.2;
-  &:disabled{
-    background-color: #f0f0f0;
-    color: #ccc;
-    border: 1px solid #ddd;
+.wrapper__categories-sort{
+  gap: 145px;
+  @media (max-width: 1840px) {
+    gap: 130px;
   }
-  &:hover{
-    background-color: rgb(216, 87, 87);
-    scale: 1.2;
+  @media (max-width: 1808px) {
+    gap: 60px;
+  }
+  
+  @media (max-width: 1100px) {
+    gap: 0px;
     
   }
 }
-.CardItemsBlock{
-  
-  margin-top: 50px;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 30px;
-  grid-row-gap: 30px;
-  padding-bottom: 300px;
-}
 
-.cardItem{
-  box-shadow: 0px 0px 29px -7px rgba(229, 230, 231, 0.82);
-  position: relative;
-  border: none;
-  background-color: #fff;
-  border-radius: 10px;
-  height: 300px;
-  width: 250px;
-  align-items: center;
-  overflow: hidden;
-  cursor: pointer;
-  
-  
-  &:hover{
-    .cardItem-image{
-      transform: scale(1.4);
-    }
-    .cardItem-title{
-      color: aqua;
-    }
 
-  }
-    &-image{
-      border-radius: 10px;
-      height: auto;
-      transition: transform 1s ease;
-      width: 250px;
-      
 
-    }
-  
-    
-    &-title{
-    position: absolute; /* Фиксирует текст на месте */
-    bottom: 0; /* Привязка к нижней части контейнера */
-    width: 100%; /* Растягивает текст на всю ширину блока */
-    text-align: center;
-    height: 65px;
-    background-color: #a5a5a55b; /* Полупрозрачный фон */
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-    margin: 0; 
-    }
-    
-  }
-  .content{
-    height: 100dvh;
 
-}
-  .flex{
-    display: flex;
-  }
-  .pInfo{
-    &-title{
-      margin-left: 400px;
-    }
-    &-box{
-      display: flex;
-      
-      justify-content: space-around;
-      
-    }
-    &pr-tlt{
-      display: flex;
-    }
-    &-area-to-cart{
-      display: flex;
-    }
-    &-area-btn{
-      gap: 10px;
-      
-    }
-    &-btn{
-      aspect-ratio: 1;
-      
-      height: 20px;
-    }
-    &-count-input{
-      width: 30px;
-    }
 
-  }
 
-  .block-product{
-    display: flex;
-    background-color: #ccc;
-    padding: 20px;
-    border-radius: 20px;
-    gap: 10px;
-    &:hover{
-      background-color: #929292;
-      cursor: pointer;
-    }
-  }
-  .relative{
-    
-    position: relative;
-  }
-  .search-results {
-    position: absolute;
-    top: 110%; /* Размещаем список прямо под полем ввода */
-    left: 0;
-    background: rgba(255, 255, 255, 0.808);
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    z-index: 1000; /* Поднимаем поверх всех элементов */
-    max-height: 200px; /* Ограничение высоты */
-    overflow-y: auto;
-    
-  }
- .wrapper-found-item{
-  padding-top: 20px;
-  &:first-child{
-    padding-top: 5px;
-  }
-  &:last-child{
-    padding-bottom: 5px;
-  }
- }
- .searching-product-price{
-  color: green;
-    
- }
 
   
+
   

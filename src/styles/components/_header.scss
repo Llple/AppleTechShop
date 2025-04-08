@@ -1,0 +1,91 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__logo {
+    height: 65px;
+    width: 300px;
+  }
+  &__phone {
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  &__social-link {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  &__promo {
+    color: rgb(217, 159, 243);
+    text-align: center;
+    font-size: 18px;
+  }
+  &__search {
+    &-input {
+      box-shadow: -1px 4px 7px 4px rgba(34, 60, 80, 0.2);
+      border: 0px;
+      border-radius: 20px;
+      font-size: 12px;
+      height: 30px;
+      width: 200px;
+      &:focus {
+        outline: none;
+      }
+    }
+    &-animate-none {
+      animation-fill-mode: none;
+    }
+
+    &-animate-create {
+      animation: dropOut 500ms ease-in-out alternate;
+    }
+    &-results {
+      width: auto;
+      position: absolute;
+      top: 110%;
+      right: 0;
+      background: rgba(255, 255, 255, 0);
+      border-radius: 10px;
+      z-index: 1000;
+      max-height: 200px;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+    &-item {
+        padding-top: 5px;
+    
+        &:first-child {
+          padding-top: 2px;
+        }
+        &:last-child {
+          padding-bottom: 2px;
+        }
+      }
+  }
+
+  
+}
+
+@keyframes dropOut {
+  0% { 
+    opacity: 0;
+    transform: translateY(-40px);
+   }
+  
+  70% { 
+    opacity: 0.8; 
+    transform: translateY(30px)
+
+  }
+  85% { 
+    opacity: 0.9; 
+    transform: translateY(-10px)
+    
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0px)
+  }
+}

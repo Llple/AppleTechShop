@@ -4,8 +4,9 @@ import "./App.scss";
 import Header from "./components/Header";
 import Home from "./page/Home";
 import { Route, Routes } from "react-router-dom";
-import NotFounf from "./components/NotFounf";
-import ProductInfo from "./components/ProductInfo";
+import NotFound from "./components/NotFound";
+import ProductInfo from "./components/ItemInfo";
+import Cart from "./page/Cart";
 
 
 
@@ -19,9 +20,9 @@ function App() {
         <Header/>
       <Routes>
         <Route path="/" element={<Home/>} />
-        <Route path="*" element={<NotFounf/>} />
+        <Route path="*" element={<NotFound/>} />
         <Route path="/product/:id" element={<ProductInfo/>} />
-        
+        <Route path="/cart" element={<Cart/>} />
       </Routes>
     </div>
   );

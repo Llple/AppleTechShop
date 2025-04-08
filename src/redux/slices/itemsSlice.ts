@@ -4,25 +4,28 @@ import axios from "axios"
 
 type propsState = {
   category:number
+  SortCategory:string
 }
 
 export const fetchTech = createAsyncThunk<Products[],propsState>(
   'users/fetchTech',
   async (props) => {
     const {category} = props
+    const {SortCategory} =props
     console.log("ЗАШЕЛ В БД СО СМЕНОЦ  КАТЕГОРИ ")
     
-    const {data}   = (category > 0 )?await axios.get<Products[]>(`https://679223c9cf994cc68048dbd6.mockapi.io/AppleTech?category=${category}`):await axios.get<Products[]>(`https://679223c9cf994cc68048dbd6.mockapi.io/AppleTech`)
+    const {data}   = (category > 0 )?await axios.get<Products[]>(`https://679223c9cf994cc68048dbd6.mockapi.io/AppleTech?category=${category}&sortBy=${SortCategory}`):await axios.get<Products[]>(`https://679223c9cf994cc68048dbd6.mockapi.io/AppleTech?sortBy=${SortCategory}`)
     return data
     
   },
 )
 export interface Products {
-  id: string,
-  imageUrl: string,
+    stock:string[],
+    id: string,
+    imageUrl: string,
     title: string,
     colors: string[],
-    storage: number[],
+    storage: string[],
     price: number,
     category: number,
     rating: number,
@@ -31,13 +34,15 @@ export interface Products {
 export interface ProductState {
   loading: "success" | "loading" | "rejected",
   products: Products[],
-  error:string
+  error:string,
+  
 }
 
 const initialState:ProductState  = {
   loading: "loading",
   products:[],
-  error:""
+  error:"",
+  
 }
 
 export const itemsSlice = createSlice({

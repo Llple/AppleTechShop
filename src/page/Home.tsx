@@ -1,36 +1,32 @@
-import React from 'react'
-import Categories from '../components/Categories'
-import axios from 'axios';
-import CardItem from '../components/CardItem';
-import { Products } from '../redux/slices/itemsSlice';
-import { fetchTech } from '../redux/slices/itemsSlice';
-import { useDispatch,useSelector } from 'react-redux';
-import { stat } from 'fs';
-import { AppDispatch, RootState } from '../redux/store';
-import MyLoader from '../components/MyLoader';
-import { Link } from 'react-router-dom';
+import React from "react";
+import Categories from "../components/Categories";
+import { fetchTech } from "../redux/slices/itemsSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "../redux/store";
+import Sort from "../components/Sort";
+import ItemsBlock from "../components/ItemsBlock";
 
-export default function Home() {
-  const dispatch = useDispatch<AppDispatch>()
-  const products    = useSelector((state: RootState)=> state.items.products)
-  const loading   = useSelector((state: RootState)=> state.items.loading)
-  const category = useSelector((state:RootState) => state.filter.category)
- 
-   
-  
+const Home = () => {
+  const dispatch = useDispatch<AppDispatch>();
+  const category = useSelector((state: RootState) => state.filter.category);
+  const sortBy = useSelector((state: RootState) => state.filter.sortBy);
+  const sorting = ["", "title", "rating"];
+  const SortCategory = sorting[sortBy];
+
+  console.log("HOME");
+
   React.useEffect(() => {
-    
-    dispatch(fetchTech({category}))
-  }, [category]);
+    dispatch(fetchTech({ category, SortCategory }));
+  }, [category, SortCategory]);
   return (
-    <>
-      <Categories/>
-      <div className="CardItemsBlock container">
-        {loading==="success" ? products?.map(item =>   <CardItem {...item}/> ) : [...new Array(10)].map((_,index) => <MyLoader/>) }
-        
-        
-
+    <div className=" container">
+      <div className="wrapper__categories-sort flex ">
+        <Categories />
+        <Sort />
       </div>
-    </>
-  )
-}
+      <ItemsBlock />
+    </div>
+  );
+};
+
+export default React.memo(Home);

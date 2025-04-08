@@ -2,6 +2,7 @@ import React from "react"
 import ContentLoader from "react-content-loader"
 
 const MyLoader = () => (
+  
   <ContentLoader 
     speed={1}
     width={250}
