@@ -7,10 +7,10 @@ import { AppDispatch, RootState } from "../redux/store";
 import { setCartProducts } from "../redux/slices/cartSlice";
 
 export default function ProductInfo() {
-  const [countValue, setCountValue] = React.useState(0);
+  const [countValue, setCountValue] = React.useState(1);
   const [productInfoItem, SetProductInfoItem] = React.useState<Products | null>(null);
   const { id } = useParams();
-  const [storage, setStorage] = React.useState(1);
+  const [storage, setStorage] = React.useState(0);
   const dispatch = useDispatch<AppDispatch>()
   const cartProducts = useSelector((state : RootState) => state.cart.cartProducts )
   console.log()
@@ -39,23 +39,24 @@ export default function ProductInfo() {
     <main className="item-info">
       
       <div className="item-info__box items-center">
-        <div className="items-center text-center">
+        <div className="items-center text-center item-info__main-block">
           <h1 className="font-bold text-white pb-2 text-xl">{productInfoItem.title}</h1>
           <img
           src={productInfoItem.imageUrl}
           alt={productInfoItem.title}
           className="h-64"
           />
+          <div className="item-info__description">Описание: {productInfoItem.description}</div>
           
         </div>
         <div>
           <div className="flex">
-            <h2 className="item-info__price text-green-500 font-bold text-xl">{productInfoItem.price} <span text-green-500>USDT</span></h2>
-            <h3>
+            <h2 className="item-info__price text-white font-bold text-xl">Цена:  <span className="item-info__price text-green-500 font-bold text-xl">{productInfoItem.price} USDT</span></h2>
+            <h3 className="item-info__product-is-having pl-8">
               Товар <span>в наличии</span>
             </h3>
           </div>
-          <div className="flex">
+          <div className="flex item-info__buy-block">
             <div className="flex item-info__buttons">
               <button
                 className="item-info__buttons-minus"
@@ -63,7 +64,8 @@ export default function ProductInfo() {
               >
                 -
               </button>
-              <input
+              <input 
+                disabled ={true}
                 type="number"
                 className="item-info__count"
                 value={countValue}
@@ -76,10 +78,10 @@ export default function ProductInfo() {
                 +
               </button>
             </div>
-            {productInfoItem.storage.map((item,index ) => <p className={index==storage?'item-info__storage-block--active' :'item-info__storage-block'}  onClick={()=>{setStorage(index)
+            <div className="item-info__storage">{productInfoItem.storage.map((item,index ) => <p className={index==storage?'item-info__storage-block--active' :'item-info__storage-block'}  onClick={()=>{setStorage(index)
               setCountValue(0)
-            }}>{item} гб.</p>)}
-            <button onClick={()=>{
+            }}>{item} гб.</p>)}</div>
+            <button className="item-info__button-to-cart" onClick={()=>{
               dispatch(setCartProducts({id: id!,
                 imageUrl: productInfoItem.imageUrl,
                 title: productInfoItem.title,

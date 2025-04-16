@@ -26,7 +26,7 @@ const Sort =() => {
       <div ref={popup} onClick={()=>{setClicked(prev=>!prev)}} className="sort">
         <p className="sort__label ">
           Сортировать по:{" "}
-          <span className="sort_select">{sortСhoice[sortBy]}</span>
+          <span className="sort__select">{sortСhoice[sortBy]}</span>
         </p>
         {clicked?<div className="sort__popup">
             {sortСhoice.map((item,index)=><li className="sort__popup-item" onClick={()=>{

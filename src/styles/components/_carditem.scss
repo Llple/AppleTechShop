@@ -20,6 +20,7 @@
     }
     .card-item__title {
       color: aqua;
+      box-shadow: 0px 0px 18px 29px rgba(136, 173, 202, 0.521);
     }
   }
   &__image {
@@ -33,12 +34,15 @@
   }
 
   &__title {
-    position: absolute; /* Фиксирует текст на месте */
-    bottom: 0; /* Привязка к нижней части контейнера */
-    width: 100%; /* Растягивает текст на всю ширину блока */
+    position: absolute; 
+    color: blue;
+    font-size: 25px;
+    font-weight: 700;
+    bottom: 0; 
+    width: 100%; 
     text-align: center;
     height: 65px;
-    background-color: #a5a5a55b; /* Полупрозрачный фон */
+    background-color: #a5a5a55b; 
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
     margin: 0;

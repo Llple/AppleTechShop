@@ -1,0 +1,64 @@
+.login {
+  &__login {
+    &-input {
+        &-none {
+            border: 1px solid red;
+            
+          }
+      }
+    &-label {
+      color: rgb(158, 204, 235);
+      &-none {
+        color: red;
+        
+      }
+      
+    }
+    
+
+  }
+  &__password {
+    &-input {
+        &-none {
+            border: 1px solid red;
+            
+          }
+      }
+    &-label {
+        color: rgb(158, 204, 235);
+        &-none {
+            color: red;
+            
+          }
+    }
+  }
+  &-block {
+    gap: 10px;
+    align-items: center;
+    justify-items: center;
+    padding-top: 100px;
+    height: 100dvh;
+    background-color: rgba(0, 0, 0, 0.486);
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      button{
+        background-color: rgba(252, 213, 213, 0.555);
+        height: 50px;
+        color: antiquewhite;
+        border-radius: 10px;
+        .disabled{
+            background-color: rgba(66, 61, 61, 0.425);
+            cursor: default;
+        }
+
+      }
+    }
+  }
+}
+
+.login__login-input{
+    border-radius: 1px solid red;
+}
+

@@ -2,12 +2,14 @@ import { configureStore } from '@reduxjs/toolkit'
 import  itemsSlice  from './slices/itemsSlice'
 import  filterSlice  from './slices/filterSlice'
 import cartSlice from './slices/cartSlice'
+import adminSlice from './slices/adminSlice'
 
 export const store = configureStore({
   reducer: {
     items : itemsSlice,  
     filter: filterSlice,
-    cart: cartSlice
+    cart: cartSlice,
+    admin:adminSlice,
 
   },
 })

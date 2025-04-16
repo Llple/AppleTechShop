@@ -1,32 +1,81 @@
 .item-info {
   height: 100dvh;
+  &__description{
+    color: #90b2f3;
+    font-size: 20px;
+    text-wrap: wrap;
+    max-width: 500px;
+  }
+  &__main-block{
+    justify-items: center;
+    
+  }
+  &__button-to-cart{
+    background-color: #62b801;
+    height: 50px;
+    border-radius: 10px;
+    &:hover{
+      background-color: #88ff00;
+    }
+    &:active{
+      background-color: #2e5700;
+    }
+  }
+  &__storage{
+    display: flex;
+  }
+  &__buy-block{
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+  }
   &__box {
     display: flex;
-
+    gap: 10px;
     justify-content: space-around;
   }
  
   &__buttons {
+    display: flex;
+    gap: 5px;
     aspect-ratio: 1;
-    height: 20px;
+    
+    height: 30px;
+    
+    &-minus,&-plus{
+      
+      width: 30px;
+      aspect-ratio: 1;
+      font-size: large;
+      border:1px solid pink;
+      background-color: #ddd;
+      &:hover{
+        background-color: #ffffff;
+      }
+      &:active{
+        background-color: #505050;
+      }
+    }
+    
   }
-  &__count-area {
+  &__count {
     width: 30px;
+    aspect-ratio: 1;
+    text-align: center;
+    border:1px solid pink
   }
 
   &__storage-block {
     display: flex;
     flex-wrap: wrap;
     list-style-type: none;
-    gap: 30px;
     font-size: 20px;
     font-weight: 200;
     padding-bottom: 20px;
-    &__item {
-      cursor: pointer;
-      background-color: hsl(60, 56%, 91%);
-      border-radius: 10px;
-      padding: 6px;
+    cursor: pointer;
+    background-color: hsl(60, 56%, 91%);
+    border-radius: 10px;
+    padding: 6px;
       &:hover {
         background-color: hsla(0, 4%, 85%, 0.699);
         scale: 1.05;
@@ -34,16 +83,9 @@
       &--active {
         background-color: rgb(216, 87, 87);
         scale: 1.2;
-        &:disabled {
-          background-color: #f0f0f0;
-          color: #ccc;
-          border: 1px solid #ddd;
-        }
-        &:hover {
-          background-color: rgb(216, 87, 87);
-          scale: 1.2;
-        }
+        border-radius: 10px;
+        
       }
-    }
+    
   }
 }

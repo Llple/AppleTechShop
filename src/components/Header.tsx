@@ -53,13 +53,13 @@ const Header = () => {
   return (
     <div className="header container">
       <Link to="/">
-        <img src="/AppleBit.png" className="header__logo" alt="logo" />
+        <img src="AppleBit.png" className="header__logo" alt="logo" />
       </Link>
       <div className="header__contacts">
         <h1 className="header__phone">+7 (987) 654-32-10</h1>
         <p>Часы работы: с 10:00 до 20:00</p>
         <div className="header__social-link">
-          <a href="tg.com">
+          <a  href="https://telegram.org" target="_blank">
             <img
               src="telegram_logo.svg.webp"
               alt="telegram"
@@ -67,8 +67,8 @@ const Header = () => {
               width={32}
             />
           </a>
-          <a href="vk.com">
-            <img src="fgs16_telegram" alt="vkontakte" height={32} width={32} />
+          <a href="https://vk.com" target="_blank">
+            <img src="vk_logo.svg.webp" alt="vkontakte" height={32} width={32} />
           </a>
           <p>Присоединяйтесь!</p>
         </div>
@@ -118,6 +118,10 @@ const Header = () => {
         <Link to="/cart">
           <button className="header__button-cart">Cart</button>
         </Link>
+        <Link to="/login">
+          <button className="header__button-cart">Login</button>
+        </Link>
+        
       </div>
     </div>
   );

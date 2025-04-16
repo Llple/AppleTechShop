@@ -14,13 +14,13 @@
     grid-template-columns: repeat(4, 0.246fr);
   }
   @media (max-width: 1808px) {
-    grid-template-columns: repeat(3, 0.246fr);
+    grid-template-columns: repeat(4, 0.2fr);
   }
   @media (max-width: 1540px) {
-    grid-template-columns: repeat(3, 0.1fr);
+    grid-template-columns: repeat(3, 0.3fr);
   }
   @media (max-width: 1100px) {
-    grid-template-columns: repeat(2, 0.35fr);
+    grid-template-columns: repeat(3, 0.25fr);
     
   }
    

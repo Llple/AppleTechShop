@@ -6,12 +6,7 @@ import { Link } from 'react-router-dom'
 const CardItem: React.FC<Products> = ({ id,
   imageUrl,
     title,
-    colors,
-    stock,
-    price,
-    category,
-    rating,
-    description} ) =>  {
+    } ) =>  {
   return (
     <Link to={`/product/${id}`}>
       <div className='card-item items-center flex-col flex justify-center'>

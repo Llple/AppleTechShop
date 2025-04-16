@@ -9,7 +9,7 @@ export default function ItemsBlock() {
     const loading   = useSelector((state: RootState)=> state.items.loading)
   return (
     <div className="items-block ">
-            {loading==="success" ? products?.map(item =>   <CardItem {...item}/> ) : [...new Array(10)].map((_,index) => <MyLoader/>) }
+            {loading==="success" ? products?.map((item) =>   <CardItem key={item.id} {...item}/> ) : [...new Array(10)].map((_,index) => <MyLoader key={index}/>) }
             
             
     

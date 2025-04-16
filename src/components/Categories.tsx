@@ -5,7 +5,7 @@ import { setCategory } from '../redux/slices/filterSlice';
 
 
 const Categories = () =>{
-  const category : number  = useSelector((state:RootState) => state.filter.category)
+  const category = useSelector((state:RootState) => state.filter.category)
   const dispatch = useDispatch<AppDispatch>()
   
 
@@ -21,7 +21,7 @@ const Categories = () =>{
   return(
     <div >
       <ul className='categories'>
-        {catigoriesItems.map((catigoriesItem,index) =><li className={index===category?'categories__item categories__item--active' :'categories__item'} onClick={()=>{onClickCategory(index)}}>{catigoriesItem}
+        {catigoriesItems.map((catigoriesItem,index) =><li key={index} className={index===category?'categories__item categories__item--active' :'categories__item'} onClick={()=>{onClickCategory(index)}}>{catigoriesItem}
         </li>)}
         
       </ul>
